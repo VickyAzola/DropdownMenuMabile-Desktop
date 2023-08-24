@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+<body style="font-family:'Epilogue', sans-serif; background: 	hsl(0, 0%, 98%);">
+  
+  <header>
+<!--NAV MENU DESKTOP START-->
+    <section id="navMenuDesktop" class="hidden md:flex relative gap-x-10 justify-between p-8 items-center">
+      
+        <nav class="flex gap-x-6 mt-0">
+          <img class="pr-4" src="images/logo.svg" alt="Company Logo"/>
+          <div>
+            <button id="dropdownBtn" onclick="return collapse1()" class="relative flex items-center gap-x-3 hover:font-semibold">
+            Features
+            <img class="arrowIcon" src="images/icon-arrow-down.svg" alt=""/>
+            </button>
+            <div id="dropdownNav_1" class="hidden flex flex-col gap-y-1 py-4 px-2 absolute left-[8%] bg-white rounded-lg drop-shadow-2xl">
+              <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                <img class="w-4 h-4" src="images/icon-todo.svg" alt="">
+                <a class="" href="#">Todo List</a>
+              </div>
+              <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                <img class="w-4 h-4" src="images/icon-calendar.svg" alt="">
+                <a href="#">Calendar</a>
+              </div>
+              <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                <img class="w-4 h-4" src="images/icon-reminders.svg" alt="">
+                  <a href="#">Reminders</a>
+              </div>
+              <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                <img class="w-4 h-4" src="images/icon-planning.svg" alt="">
+                <a href="#">Planning</a>
+              </div>
+            </div>
+          </div>
+      
+          <div>
+                <button onclick="return collapse2()" class="relative flex items-center gap-x-3 hover:font-semibold">
+                  Company 
+                  <img class="arrowIcon" src="images/icon-arrow-down.svg" alt=""/>
+                </button>
+                <div id="dropdownNav_2" class="hidden flex flex-col py-4 px-2 gap-y-1 absolute bg-white drop-shadow-2xl rounded-lg">
+                  <a class="w-full p-2 hover:bg-slate-100" href="#">History</a>
+                  <a class="w-full p-2 hover:bg-slate-100" href="#">Our Team</a>
+                  <a class="w-full p-2 hover:bg-slate-100" href="#">Blog</a>
+                </div>
+          </div>
+      
+          <div>
+                <button class="hover:font-semibold">Careers</button>
+          </div>
+      
+          <div>
+                <button class="hover:font-semibold">About</button>
+          </div>
+        </nav>
+  
+      <div class="flex gap-x-4">
+        <button class="px-6 py-1 rounded-xl hover:bg-slate-100 text-sm">Login</button>
+        <button class="px-4 py-1 border border-black rounded-xl hover:bg-black hover:text-white text-sm">Register</button>
+      </div>
+    </section>
+<!--NAV MENU DESKTOP END-->
+
+<!--NAV MENU MOBILE START-->
+    <section id="navMenumobile" class="block md:hidden">
+      <div class="flex items-center justify-between p-4">
+        <img src="images/logo.svg" alt="Company Logo"/>
+        <button id="menuBtn" onclick="return showNav()" class="" aria-label="Show menu button"><img src="images/icon-menu.svg" alt="Navigation menu icon"/></button>
+      </div>
+
+      <section id="navMenu" class="hidden">
+        <div  class="bg-black opacity-50 absolute z-10 w-full min-h-screen left-[0] top-[0]"></div>
+        <div class="bg-white absolute z-20 w-2/3 min-h-screen right-[0] top-[0] p-5 ">
+          <div class="flex justify-end ">
+            <button onclick="return closeNav()"><img class="w-6" src="images/icon-close-menu.svg" alt="Close navigation menu"/></button>
+          </div>
+          <nav class="flex flex-col  gap-y-4  mt-6">
+            <div>
+              <button id="dropdownBtn" onclick="return collapse1()" class=" flex items-center gap-x-3 hover:font-semibold">
+                Features
+                <img class="arrowIcon" src="images/icon-arrow-down.svg" alt=""/>
+              </button>
+              <div id="dropdownNavMobile_1" class="hidden flex flex-col gap-y-1 p-4">
+                  <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                    <img class="w-4 h-4" src="images/icon-todo.svg" alt="">
+                    <a class="" href="#">Todo List</a>
+                  </div>
+                  <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                    <img class="w-4 h-4" src="images/icon-calendar.svg" alt="">
+                    <a href="#">Calendar</a>
+                  </div>
+                  <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                    <img class="w-4 h-4" src="images/icon-reminders.svg" alt="">
+                    <a href="#">Reminders</a>
+                  </div>
+                  <div class="flex gap-x-3 items-center w-full p-2 hover:bg-slate-100">
+                    <img class="w-4 h-4" src="images/icon-planning.svg" alt="">
+                    <a href="#">Planning</a>
+                  </div>
+              </div>
+            </div>
+    
+            <div>
+              <button onclick="return collapse2()" class="flex items-center gap-x-3 hover:font-semibold">
+                Company 
+                <img class="arrowIcon" src="images/icon-arrow-down.svg" alt=""/>
+              </button>
+              <div id="dropdownNavMobile_2" class="hidden flex flex-col p-4 gap-y-1">
+                <a class="w-full p-2 hover:bg-slate-100" href="#">History</a>
+                <a class="w-full p-2 hover:bg-slate-100" href="#">Our Team</a>
+                <a class="w-full p-2 hover:bg-slate-100" href="#">Blog</a>
+              </div>
+            </div>
+    
+            <div>
+              <button class="hover:font-semibold">Careers</button>
+            </div>
+    
+            <div>
+              <button class="hover:font-semibold">About</button>
+            </div>
+          </nav>
+
+        <div class="flex flex-col">
+          <button class="py-2  rounded-xl hover:bg-slate-100 text-sm">Login</button>
+          <button class="py-2 border border-black rounded-xl hover:bg-black hover:text-white text-sm">Register</button>
+        </div>
+
+      </div>
+      </section>
+
+    </section>
+<!--NAV MENU MOBILE END-->
+  </header>
+
+  <main class="md:grid md:grid-cols-2 md:place-items-center md:pb-8">
+    <img class="block md:hidden" src="images/image-hero-mobile.png" alt="Person with laptop">
+    <img class="hidden md:block md:order-last md:max-w-sm" src="images/image-hero-desktop.png" alt="Person with laptop">
+    
+    <div class="md:pl-28 md:pt-20">
+      <section class="px-4 flex flex-col justify-center md:items-start text-center md:text-left gap-y-4 md:gap-y-8 my-6 md:pr-20">
+        <div class="flex gap-x-2 mx-auto md:mx-0 md:flex-col">
+          <h1 class="text-3xl md:text-[4rem] md:leading-[3.5rem] font-bold">Make</h1>
+          <h1 class="text-3xl md:text-[4rem] md:leading-[3.5rem] font-bold">remote work</h1>
+        </div>
+        <P class="text-sm md:text-base md:pr-12 md:pt-6">Get your team in sync, no matter your location. Streamline processes, 
+          create team rituals, and watch productivity soar.
+        </P>
+        <button class="hover:bg-transparent hover:text-black md:border-black border my-2 bg-black text-white rounded-xl mx-auto md:mx-0 md:flex py-2.5 px-4 text-sm font-bold">Learn more</button>
+      </section>
+
+      <section class="px-4 flex justify-between items-center pt-5 md:pt-12">
+        <img class="w-14 md:w-20" src="images/client-databiz.svg" alt="Databiz logo">
+        <img class="w-12 md:w-16" src="images/client-audiophile.svg" alt="Audio phile logo">
+        <img class="w-14 md:w-20" src="images/client-meet.svg" alt="Meet logo">
+        <img class="w-14 md:w-20" src="images/client-maker.svg" alt="Maker logo">
+      </section>
+    </div>
+  </main>
+
+  
+  <footer class="mt-8 text-center text-xs text-slate-400">
+    <p>by <a class="font-bold hover:text-blue-400" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="font-bold hover:text-blue-400" href="https://github.com/VickyAzola/DropdownMenuMabile-Desktop/" target="_blank"> Victoria Azola</a> </p>
+  </footer>
+
+</body>
+<script src="index.js"></script>
+</html>
